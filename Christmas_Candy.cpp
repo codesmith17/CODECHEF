@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <numeric>
 #include <set>
+#include <stack>
 #include <string>
 #include <utility>
 #include <vector>
@@ -50,19 +51,23 @@ int32_t main(int argc, char *argv[])
     int t = ri();
     while (t--)
     {
-        int n = ri(), m = ri();
-        vector<int> arr(n);
+        int n = ri();
+        vector<int> arr;
+
         for (int i = 0; i < n; i++)
         {
-            arr[i] = ri();
+            int a = ri();
+            arr.push_back(a);
         }
-        int ok=0;
-        if(n%m>0)
+        int maxi = arr[0], ans = -0;
+        for (int i = 0; i < arr.size(); i++)
         {
+            if (arr[i] < maxi)
+                ans++;
 
+            maxi = max(maxi, arr[i]);
         }
-        int q = x / y + (x % y != 0);
-        cout << max({1ll, q, x - 2 * (y - 1)}) << endl;
+        cout << ans << endl;
     }
     return 0;
 }

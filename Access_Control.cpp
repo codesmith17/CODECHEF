@@ -50,19 +50,28 @@ int32_t main(int argc, char *argv[])
     int t = ri();
     while (t--)
     {
-        int n = ri(), m = ri();
-        vector<int> arr(n);
+        int n = ri(), x = ri();
+        string s = rs();
+        int swipes = 0;
         for (int i = 0; i < n; i++)
         {
-            arr[i] = ri();
+            if (s[i] == '0')
+            {
+                if (swipes <= 0)
+                {
+                    cout << "NO" << endl;
+                    goto label;
+                }
+                swipes--;
+            }
+            else
+            {
+                swipes = x;
+            }
         }
-        int ok=0;
-        if(n%m>0)
-        {
-
-        }
-        int q = x / y + (x % y != 0);
-        cout << max({1ll, q, x - 2 * (y - 1)}) << endl;
+        cout << "YES" << endl;
+    label:
+        int k;
     }
     return 0;
 }

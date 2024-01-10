@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "*.embeddedhtml": "html",
     "*.ejs": "html",
     "iostream": "cpp",
     "cmath": "cpp",
@@ -100,7 +101,9 @@
     "xstddef": "cpp",
     "xtr1common": "cpp",
     "xhash": "cpp",
-    "xtree": "cpp"
+    "xtree": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
   },
   "C_Cpp.errorSquiggles": "disabled"
 }

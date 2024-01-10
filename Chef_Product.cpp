@@ -47,22 +47,26 @@ string rs()
 }
 int32_t main(int argc, char *argv[])
 {
-    int t = ri();
+    long long int t = ri();
     while (t--)
     {
-        int n = ri(), m = ri();
-        vector<int> arr(n);
-        for (int i = 0; i < n; i++)
+        long long int n = rl();
+        long long int start = 1, end = 1e10, res;
+        while (start <= end)
         {
-            arr[i] = ri();
+            int middle = start + (end - start) / 2;
+            if (middle <= sqrt(n))
+            {
+                res = middle;
+                start = middle + 1;
+            }
+            else
+                end = middle - 1;
         }
-        int ok=0;
-        if(n%m>0)
-        {
+        if (n & 1)
+            res++;
 
-        }
-        int q = x / y + (x % y != 0);
-        cout << max({1ll, q, x - 2 * (y - 1)}) << endl;
+        cout << res / 2 << endl;
     }
     return 0;
 }
