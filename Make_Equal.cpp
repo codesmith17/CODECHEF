@@ -211,52 +211,11 @@ int32_t main(int argc, char *argv[])
     while (t--)
     {
         int n = ri();
-        vector<int> a(n, 0);
+        vector<int> arr(n, 0);
         for (int i = 0; i < n; i++)
-            a[i] = ri();
-        if (is_sorted(a.begin(), a.end()))
-        {
-            cout << "YES" << endl;
-            continue;
-        }
-
-        vector<int> b = a;
-
-        vector<int> v;
-        int maxi = a[0];
-        int plusplus = -1e9;
-        for (int i = 1; i < n; i++)
-        {
-            maxi = max(a[i], maxi);
-            if (a[i] < maxi)
-            {
-                v.push_back(i);
-                plusplus = max(plusplus, maxi - a[i]);
-            }
-        }
-
-        int f = 1;
-        for (int i = 1; i < v.size(); i++)
-        {
-            if (v[i] == v[i - 1] + 1)
-            {
-                f = 0;
-            }
-        }
-        for (auto num : v)
-        {
-
-            a[num] = a[num] + plusplus;
-        }
-
-        if (is_sorted(a.begin(), a.end()) and f)
-        {
-            cout << "YES" << endl;
-        }
-        else
-        {
-            cout << "NO" << endl;
-        }
+            arr[i] = ri();
+        int min1 = *min_element(arr.begin(), arr.end());
+        cout << ((arr.back() == arr.front() and arr.front() == min1) ? "YES" : "NO") << endl;
     }
     return 0;
 }
