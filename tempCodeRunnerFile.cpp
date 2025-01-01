@@ -1,2 +1,3 @@
-
-        return {-1}; // Return -1 if not possible
+#include <iostream>
+#include <unordered_map>
+using namespace std;
